@@ -2,12 +2,17 @@
 
 void spine::BGFXTextureLoader::load(AtlasPage& page, const String& path)
 {
-	bgfx::TextureHandle texColor = loadTexture("fieldstone-n.dds");
+	bgfx::TextureInfo ti;
+	auto texColor = loadTexture(path.buffer(), BGFX_TEXTURE_NONE | BGFX_SAMPLER_NONE, 0, &ti, nullptr);
+
+	page.setRendererObject(&texColor);
+	page.width = ti.width;
+	page.height = ti.height;
 }
 
 void spine::BGFXTextureLoader::unload(void* texture)
 {
-
+	delete (bgfx::TextureHandle*)texture;
 }
 
 spine::SpineExtension* spine::getDefaultExtension() {
