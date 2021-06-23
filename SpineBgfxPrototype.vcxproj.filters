@@ -464,5 +464,19 @@
       <Filter>Header Files</Filter>
     </None>
     <None Include="3rdParty\glfw\lib-vc2019\glfw3.dll" />
+    <None Include="export\spineboy.atlas" />
+    <None Include="export\spineboy-ess.json" />
+    <None Include="export\spineboy-ess.skel" />
+    <None Include="export\spineboy-pma.atlas" />
+    <None Include="export\spineboy-pro.json" />
+    <None Include="export\spineboy-pro.skel" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="export\spineboy.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="export\spineboy-pma.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

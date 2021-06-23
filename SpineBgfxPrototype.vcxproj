@@ -305,6 +305,32 @@
   <ItemGroup>
     <None Include="3rdParty\bgfx\bgfx\common\bounds.inl" />
     <None Include="3rdParty\glfw\lib-vc2019\glfw3.dll" />
+    <None Include="export\spineboy-ess.json">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="export\spineboy-ess.skel">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="export\spineboy-pma.atlas">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="export\spineboy-pro.json">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="export\spineboy-pro.skel">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="export\spineboy.atlas">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="export\spineboy-pma.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
+    <Image Include="export\spineboy.png">
+      <DeploymentContent>true</DeploymentContent>
+    </Image>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

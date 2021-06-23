@@ -24,7 +24,7 @@ namespace spine
 		//sf::VertexArray* vertexArray;
 		VertexEffect* vertexEffect;
 
-		SkeletonDrawable(SkeletonData* skeleton, AnimationStateData* stateData = 0);
+		SkeletonDrawable(SkeletonData* skeletonData, AnimationStateData* stateData = 0);
 
 		~SkeletonDrawable();
 
