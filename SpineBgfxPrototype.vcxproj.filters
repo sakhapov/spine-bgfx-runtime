@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\3rdParty">
+      <UniqueIdentifier>{b12f3af3-7758-4230-bda5-7ef60058eef8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\3rdParty\bgfx">
+      <UniqueIdentifier>{8a4a13ab-8f00-4361-9ece-50aa86f97205}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\3rdParty\spine-cpp">
+      <UniqueIdentifier>{7a40d85c-c12d-470b-96fa-0e176dcca558}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\3rdParty\meshoptimizer">
+      <UniqueIdentifier>{ff5d0c0f-62bb-418d-9e17-d2dd0ded76d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\3rdParty\dear-imgui">
+      <UniqueIdentifier>{0efea3ef-f140-43f0-8bf7-6d0151c31153}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SpineBgfxPrototype.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sandbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spineBgfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Animation.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\AnimationState.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\AnimationStateData.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Atlas.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\AtlasAttachmentLoader.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Attachment.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\AttachmentLoader.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\AttachmentTimeline.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Bone.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\BoneData.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\BoundingBoxAttachment.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\ClippingAttachment.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\ColorTimeline.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\ConstraintData.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\CurveTimeline.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\DeformTimeline.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\DrawOrderTimeline.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Event.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\EventData.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\EventTimeline.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Extension.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\IkConstraint.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\IkConstraintData.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\IkConstraintTimeline.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Json.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\LinkedMesh.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\MathUtil.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\MeshAttachment.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\PathAttachment.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\PathConstraint.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\PathConstraintData.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\PathConstraintMixTimeline.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\PathConstraintPositionTimeline.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\PathConstraintSpacingTimeline.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\PointAttachment.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\RegionAttachment.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\RotateTimeline.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\RTTI.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\ShearTimeline.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Skeleton.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\SkeletonBinary.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\SkeletonBounds.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\SkeletonClipping.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\SkeletonData.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\SkeletonJson.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Skin.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Slot.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\SlotData.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\SpineObject.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\TextureLoader.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Timeline.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\TransformConstraint.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\TransformConstraintData.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\TransformConstraintTimeline.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\TranslateTimeline.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Triangulator.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\TwoColorTimeline.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Updatable.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\VertexAttachment.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\VertexEffect.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\ScaleTimeline.cpp">
+      <Filter>Source Files\3rdParty\spine-cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\ps\particle_system.cpp">
+      <Filter>Source Files\3rdParty\bgfx</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\entry\input.cpp">
+      <Filter>Source Files\3rdParty\bgfx</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\entry\entry_x11.cpp">
+      <Filter>Source Files\3rdParty\bgfx</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\entry\entry_windows.cpp">
+      <Filter>Source Files\3rdParty\bgfx</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\entry\entry_sdl.cpp">
+      <Filter>Source Files\3rdParty\bgfx</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\entry\entry_noop.cpp">
+      <Filter>Source Files\3rdParty\bgfx</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\entry\entry_html5.cpp">
+      <Filter>Source Files\3rdParty\bgfx</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\entry\entry_glfw.cpp">
+      <Filter>Source Files\3rdParty\bgfx</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\entry\entry_android.cpp">
+      <Filter>Source Files\3rdParty\bgfx</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\entry\entry.cpp">
+      <Filter>Source Files\3rdParty\bgfx</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\entry\dialog.cpp">
+      <Filter>Source Files\3rdParty\bgfx</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\debugdraw\debugdraw.cpp">
+      <Filter>Source Files\3rdParty\bgfx</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\cube_atlas.cpp">
+      <Filter>Source Files\3rdParty\bgfx</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\entry\cmd.cpp">
+      <Filter>Source Files\3rdParty\bgfx</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\camera.cpp">
+      <Filter>Source Files\3rdParty\bgfx</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\bounds.cpp">
+      <Filter>Source Files\3rdParty\bgfx</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\bgfx_utils.cpp">
+      <Filter>Source Files\3rdParty\bgfx</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\meshoptimizer\src\allocator.cpp">
+      <Filter>Source Files\3rdParty\meshoptimizer</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\meshoptimizer\src\clusterizer.cpp">
+      <Filter>Source Files\3rdParty\meshoptimizer</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\meshoptimizer\src\indexcodec.cpp">
+      <Filter>Source Files\3rdParty\meshoptimizer</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\meshoptimizer\src\indexgenerator.cpp">
+      <Filter>Source Files\3rdParty\meshoptimizer</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\meshoptimizer\src\overdrawanalyzer.cpp">
+      <Filter>Source Files\3rdParty\meshoptimizer</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\meshoptimizer\src\overdrawoptimizer.cpp">
+      <Filter>Source Files\3rdParty\meshoptimizer</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\meshoptimizer\src\simplifier.cpp">
+      <Filter>Source Files\3rdParty\meshoptimizer</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\meshoptimizer\src\spatialorder.cpp">
+      <Filter>Source Files\3rdParty\meshoptimizer</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\meshoptimizer\src\stripifier.cpp">
+      <Filter>Source Files\3rdParty\meshoptimizer</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\meshoptimizer\src\vcacheanalyzer.cpp">
+      <Filter>Source Files\3rdParty\meshoptimizer</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\meshoptimizer\src\vcacheoptimizer.cpp">
+      <Filter>Source Files\3rdParty\meshoptimizer</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\meshoptimizer\src\vertexcodec.cpp">
+      <Filter>Source Files\3rdParty\meshoptimizer</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\meshoptimizer\src\vertexfilter.cpp">
+      <Filter>Source Files\3rdParty\meshoptimizer</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\meshoptimizer\src\vfetchanalyzer.cpp">
+      <Filter>Source Files\3rdParty\meshoptimizer</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\meshoptimizer\src\vfetchoptimizer.cpp">
+      <Filter>Source Files\3rdParty\meshoptimizer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sandbox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="spineBgfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\c99\bgfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\debugdraw.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\fs_debugdraw_fill.bin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\fs_debugdraw_fill_lit.bin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\fs_debugdraw_fill_texture.bin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\fs_debugdraw_lines.bin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\fs_debugdraw_lines_stipple.bin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\vs_debugdraw_fill.bin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\vs_debugdraw_fill_lit.bin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\vs_debugdraw_fill_lit_mesh.bin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\vs_debugdraw_fill_mesh.bin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\vs_debugdraw_fill_texture.bin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\vs_debugdraw_lines.bin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\vs_debugdraw_lines_stipple.bin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\entry\cmd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\entry\dbg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\entry\dialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\entry\entry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\entry\entry_p.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\entry\input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\imgui\droidsans.ttf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\imgui\fs_imgui_image.bin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\imgui\fs_ocornut_imgui.bin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\imgui\icons_font_awesome.ttf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\imgui\icons_kenney.ttf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\imgui\roboto_regular.ttf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\imgui\robotomono_regular.ttf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\imgui\vs_imgui_image.bin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\imgui\vs_ocornut_imgui.bin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\ps\fs_particle.bin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\ps\particle_system.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\ps\vs_particle.bin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\aviwriter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\bgfx_utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\bounds.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\cube_atlas.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\packrect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\bgfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\defines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\embedded_shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\bgfx\bgfx\platform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\meshoptimizer\src\meshoptimizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="3rdParty\bgfx\bgfx\common\bounds.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="3rdParty\glfw\lib-vc2019\glfw3.dll" />
+  </ItemGroup>
+</Project>

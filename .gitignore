@@ -30,3 +30,16 @@
 *.exe
 *.out
 *.app
+*.pdb
+*.user
+
+# Logs
+*.tlog
+*.log
+
+# Other
+*.ilk
+
+# Directory
+x64/
+x86/

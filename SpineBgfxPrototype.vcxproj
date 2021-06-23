@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{54c67e4a-aea9-4771-97a3-1776360233db}</ProjectGuid>
+    <RootNamespace>SpineBgfxPrototype</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)3rdParty\bx\include\compat\msvc\;$(ProjectDir)3rdParty\bimg\include\;$(ProjectDir)3rdParty\bx\include\;$(ProjectDir)3rdParty\bgfx\include\;$(ProjectDir)3rdParty\spine-cpp\include\;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>$(ProjectDir)3rdParty\bgfx\lib\;$(LibraryPath)</LibraryPath>
+    <CopyLocalDeploymentContent>true</CopyLocalDeploymentContent>
+    <CopyLocalProjectReference>true</CopyLocalProjectReference>
+    <CopyLocalDebugSymbols>true</CopyLocalDebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)3rdParty\glfw\include\;$(ProjectDir)3rdParty\bx\include\compat\msvc\;$(ProjectDir)3rdParty\bimg\;$(ProjectDir)3rdParty\bx\include\;$(ProjectDir)3rdParty\bgfx\;$(ProjectDir)3rdParty\spine-cpp\include\;$(ProjectDir)3rdParty\bgfx\bgfx\common\entry\;$(ProjectDir)3rdParty\bgfx\bgfx\common\;$(ProjectDir)3rdParty\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)3rdParty\glfw\lib-vc2019\;$(ProjectDir)3rdParty\bgfx\lib\;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>bgfxDebug.lib;bimgDebug.lib;bxDebug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)3rdParty\bgfx\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>bgfxDebug.lib;bimg_decodeDebug.lib;bimgDebug.lib;bxDebug.lib;glfw3dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)3rdParty\glfw\lib-vc2019;$(ProjectDir)3rdParty\bgfx\lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\bgfx_utils.cpp" />
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\bounds.cpp" />
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\camera.cpp" />
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\cube_atlas.cpp" />
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\debugdraw\debugdraw.cpp" />
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\entry\cmd.cpp" />
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\entry\dialog.cpp" />
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\entry\entry.cpp" />
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\entry\entry_android.cpp" />
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\entry\entry_glfw.cpp" />
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\entry\entry_html5.cpp" />
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\entry\entry_noop.cpp" />
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\entry\entry_sdl.cpp" />
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\entry\entry_windows.cpp" />
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\entry\entry_x11.cpp" />
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\entry\input.cpp" />
+    <ClCompile Include="3rdParty\bgfx\bgfx\common\ps\particle_system.cpp" />
+    <ClCompile Include="3rdParty\meshoptimizer\src\allocator.cpp" />
+    <ClCompile Include="3rdParty\meshoptimizer\src\clusterizer.cpp" />
+    <ClCompile Include="3rdParty\meshoptimizer\src\indexcodec.cpp" />
+    <ClCompile Include="3rdParty\meshoptimizer\src\indexgenerator.cpp" />
+    <ClCompile Include="3rdParty\meshoptimizer\src\overdrawanalyzer.cpp" />
+    <ClCompile Include="3rdParty\meshoptimizer\src\overdrawoptimizer.cpp" />
+    <ClCompile Include="3rdParty\meshoptimizer\src\simplifier.cpp" />
+    <ClCompile Include="3rdParty\meshoptimizer\src\spatialorder.cpp" />
+    <ClCompile Include="3rdParty\meshoptimizer\src\stripifier.cpp" />
+    <ClCompile Include="3rdParty\meshoptimizer\src\vcacheanalyzer.cpp" />
+    <ClCompile Include="3rdParty\meshoptimizer\src\vcacheoptimizer.cpp" />
+    <ClCompile Include="3rdParty\meshoptimizer\src\vertexcodec.cpp" />
+    <ClCompile Include="3rdParty\meshoptimizer\src\vertexfilter.cpp" />
+    <ClCompile Include="3rdParty\meshoptimizer\src\vfetchanalyzer.cpp" />
+    <ClCompile Include="3rdParty\meshoptimizer\src\vfetchoptimizer.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Animation.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\AnimationState.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\AnimationStateData.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Atlas.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\AtlasAttachmentLoader.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Attachment.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\AttachmentLoader.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\AttachmentTimeline.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Bone.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\BoneData.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\BoundingBoxAttachment.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\ClippingAttachment.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\ColorTimeline.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\ConstraintData.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\CurveTimeline.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\DeformTimeline.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\DrawOrderTimeline.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Event.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\EventData.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\EventTimeline.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Extension.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\IkConstraint.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\IkConstraintData.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\IkConstraintTimeline.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Json.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\LinkedMesh.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\MathUtil.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\MeshAttachment.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\PathAttachment.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\PathConstraint.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\PathConstraintData.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\PathConstraintMixTimeline.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\PathConstraintPositionTimeline.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\PathConstraintSpacingTimeline.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\PointAttachment.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\RegionAttachment.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\RotateTimeline.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\RTTI.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\ScaleTimeline.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\ShearTimeline.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Skeleton.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\SkeletonBinary.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\SkeletonBounds.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\SkeletonClipping.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\SkeletonData.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\SkeletonJson.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Skin.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Slot.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\SlotData.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\SpineObject.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\TextureLoader.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Timeline.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\TransformConstraint.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\TransformConstraintData.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\TransformConstraintTimeline.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\TranslateTimeline.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Triangulator.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\TwoColorTimeline.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\Updatable.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\VertexAttachment.cpp" />
+    <ClCompile Include="3rdParty\spine-cpp\src\spine\VertexEffect.cpp" />
+    <ClCompile Include="sandbox.cpp" />
+    <ClCompile Include="spineBgfx.cpp" />
+    <ClCompile Include="SpineBgfxPrototype.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="3rdParty\bgfx\bgfx\bgfx.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\c99\bgfx.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\aviwriter.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\bgfx_utils.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\bounds.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\camera.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\common.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\cube_atlas.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\debugdraw.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\fs_debugdraw_fill.bin.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\fs_debugdraw_fill_lit.bin.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\fs_debugdraw_fill_texture.bin.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\fs_debugdraw_lines.bin.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\fs_debugdraw_lines_stipple.bin.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\vs_debugdraw_fill.bin.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\vs_debugdraw_fill_lit.bin.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\vs_debugdraw_fill_lit_mesh.bin.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\vs_debugdraw_fill_mesh.bin.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\vs_debugdraw_fill_texture.bin.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\vs_debugdraw_lines.bin.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\debugdraw\vs_debugdraw_lines_stipple.bin.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\entry\cmd.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\entry\dbg.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\entry\dialog.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\entry\entry.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\entry\entry_p.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\entry\input.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\imgui\droidsans.ttf.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\imgui\fs_imgui_image.bin.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\imgui\fs_ocornut_imgui.bin.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\imgui\icons_font_awesome.ttf.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\imgui\icons_kenney.ttf.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\imgui\robotomono_regular.ttf.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\imgui\roboto_regular.ttf.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\imgui\vs_imgui_image.bin.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\imgui\vs_ocornut_imgui.bin.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\packrect.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\ps\fs_particle.bin.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\ps\particle_system.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\common\ps\vs_particle.bin.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\defines.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\embedded_shader.h" />
+    <ClInclude Include="3rdParty\bgfx\bgfx\platform.h" />
+    <ClInclude Include="3rdParty\meshoptimizer\src\meshoptimizer.h" />
+    <ClInclude Include="sandbox.h" />
+    <ClInclude Include="spineBgfx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="3rdParty\bgfx\bgfx\common\bounds.inl" />
+    <None Include="3rdParty\glfw\lib-vc2019\glfw3.dll" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
