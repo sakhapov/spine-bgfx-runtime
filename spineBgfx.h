@@ -1,6 +1,8 @@
 #ifndef SPINE_BGFX_H_
 #define SPINE_BGFX_H_
 
+#include <vector>
+
 #include <spine/spine.h>
 #include <spine/Extension.h>
 #include <spine/Debug.h>
@@ -17,11 +19,39 @@ namespace spine
 {
 	class SkeletonDrawable
 	{
+		struct Vertex
+		{
+			uint8_t x;
+			uint8_t y;
+			uint8_t z;
+			int16_t u;
+			int16_t v;
+			spine::Color color;
+
+			static void init()
+			{
+				ms_layout
+					.begin()
+					.add(bgfx::Attrib::Position, 3, bgfx::AttribType::Uint8)
+					.add(bgfx::Attrib::TexCoord0, 2, bgfx::AttribType::Int16, true, true)
+					.add(bgfx::Attrib::Color0, 4, bgfx::AttribType::Float, true, true)
+					.end();
+			}
+
+			static bgfx::VertexLayout ms_layout;
+		};
+
 	public:
+		typedef struct Texture {
+			bgfx::TextureHandle textureHndl;
+			int width;
+			int height;
+		} Texture;
+		
 		Skeleton* skeleton;
 		AnimationState* state;
 		float timeScale;
-		//sf::VertexArray* vertexArray;
+		std::vector<Vertex>* vertexArray;
 		VertexEffect* vertexEffect;
 
 		SkeletonDrawable(SkeletonData* skeletonData, AnimationStateData* stateData = 0);

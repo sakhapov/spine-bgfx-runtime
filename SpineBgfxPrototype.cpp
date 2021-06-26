@@ -4,5 +4,6 @@
 int main()
 {
 	sandbox demo;
+
 	demo.bgfxInit();
 }

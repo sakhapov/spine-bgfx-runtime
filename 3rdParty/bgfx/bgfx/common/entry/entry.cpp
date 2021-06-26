@@ -880,6 +880,7 @@ BX_PRAGMA_DIAGNOSTIC_POP();
 
 	bx::FileReaderI* getFileReader()
 	{
+		s_fileReader = BX_NEW(g_allocator, FileReader);
 		return s_fileReader;
 	}
 

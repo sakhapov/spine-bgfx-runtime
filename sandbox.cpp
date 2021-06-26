@@ -13,6 +13,65 @@ static void glfw_keyCallback(GLFWwindow* window, int key, int scancode, int acti
 		s_showStats = !s_showStats;
 }
 
+void spineboy(spine::SkeletonData* skeletonData, spine::Atlas* atlas)
+{
+	SP_UNUSED(atlas);
+
+	SkeletonBounds bounds;
+
+	// Configure mixing.
+	AnimationStateData stateData(skeletonData);
+	stateData.setMix("walk", "jump", 0.2f);
+	stateData.setMix("jump", "run", 0.2f);
+
+	SkeletonDrawable drawable(skeletonData, &stateData);
+	drawable.timeScale = 1;
+	drawable.setUsePremultipliedAlpha(true);
+
+	Skeleton* skeleton = drawable.skeleton;
+	skeleton->setToSetupPose();
+
+	skeleton->setPosition(320, 590);
+	skeleton->updateWorldTransform();
+
+	Slot* headSlot = skeleton->findSlot("head");
+
+	//drawable.state->setListener(callback);
+	drawable.state->addAnimation(0, "walk", true, 0);
+	drawable.state->addAnimation(0, "jump", false, 3);
+	drawable.state->addAnimation(0, "run", true, 0);
+
+	//sf::RenderWindow window(sf::VideoMode(640, 640), "Spine SFML - spineboy");
+	//window.setFramerateLimit(60);
+	//sf::Event event;
+	//sf::Clock deltaClock;
+	while (true) {
+		/*while (window.pollEvent(event))
+			if (event.type == sf::Event::Closed) window.close();*/
+
+			/*float delta = deltaClock.getElapsedTime().asSeconds();
+			deltaClock.restart();
+
+			bounds.update(*skeleton, true);
+			sf::Vector2i position = sf::Mouse::getPosition(window);
+			if (bounds.containsPoint((float)position.x, (float)position.y)) {
+				headSlot->getColor().g = 0;
+				headSlot->getColor().b = 0;
+			}
+			else {
+				headSlot->getColor().g = 1;
+				headSlot->getColor().b = 1;
+			}*/
+
+		drawable.update(0);
+		drawable.draw();
+
+		//window.clear();
+		//window.draw(drawable);
+		//window.display();
+	}
+}
+
 bool sandbox::bgfxInit()
 {
 	if (!glfwInit())
@@ -27,6 +86,7 @@ bool sandbox::bgfxInit()
 
 	bgfx::Init init;
 
+	init.type = bgfx::RendererType::OpenGL;
 	init.platformData.nwh = glfwGetWin32Window(window);
 
 	int width, height; 
@@ -36,6 +96,8 @@ bool sandbox::bgfxInit()
 	init.resolution.reset = BGFX_RESET_VSYNC;
 	if (!bgfx::init(init))
 		return 1;
+
+	testcase(spineboy, "export/spineboy-pro.json", "export/spineboy-pro.skel", "export/spineboy-pma.atlas", 0.6f);
 
 	const bgfx::ViewId kClearView = 0;
 	bgfx::setViewClear(kClearView, BGFX_CLEAR_COLOR);
@@ -71,8 +133,7 @@ bool sandbox::bgfxInit()
 	return true;
 }
 
-void sandbox::testcase(
-	void func(SkeletonData* skeletonData, Atlas* atlas), 
+void sandbox::testcase(void func(SkeletonData* skeletonData, Atlas* atlas),
 	const char* jsonName, const char* binaryName, const char* atlasName, float scale)
 {
 	BGFXTextureLoader textureLoader;

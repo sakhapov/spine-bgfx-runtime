@@ -18,6 +18,7 @@ class sandbox
 public:
 	bool bgfxInit();
 	void testcase(void func(spine::SkeletonData* skeletonData, spine::Atlas* atlas), const char* jsonName, const char* binaryName, const char* atlasName, float scale);
+	//void spineboy(SkeletonData* skeletonData, Atlas* atlas);
 
 	shared_ptr<spine::SkeletonData> readSkeletonJsonData(const spine::String& filename, spine::Atlas* atlas, float scale);
 	shared_ptr<spine::SkeletonData> readSkeletonBinaryData(const char* filename, spine::Atlas* atlas, float scale);
