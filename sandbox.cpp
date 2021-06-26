@@ -43,15 +43,9 @@ void spineboy(spine::SkeletonData* skeletonData, spine::Atlas* atlas)
 
 	Slot* headSlot = skeleton->findSlot("head");
 
-	//drawable.state->setListener(callback);
 	drawable.state->addAnimation(0, "walk", true, 0);
 	drawable.state->addAnimation(0, "jump", false, 3);
 	drawable.state->addAnimation(0, "run", true, 0);
-
-	//sf::RenderWindow window(sf::VideoMode(640, 640), "Spine SFML - spineboy");
-	//window.setFramerateLimit(60);
-	//sf::Event event;
-	//sf::Clock deltaClock;
 
 	while (true) {
 		while (!glfwWindowShouldClose(window)) 
@@ -67,9 +61,10 @@ void spineboy(spine::SkeletonData* skeletonData, spine::Atlas* atlas)
 
 			bounds.update(*skeleton, true);
 
+			/*
 			bgfx::touch(kClearView);
-			// Use debug font to print information about this example.
 			bgfx::dbgTextClear();
+			*/
 
 			drawable.update(0);
 			drawable.draw();
