@@ -44,10 +44,12 @@ namespace spine
 	public:
 		typedef struct Texture {
 			bgfx::TextureHandle textureHndl;
+			bgfx::UniformHandle s_texColor;
 			int width;
 			int height;
 		} Texture;
 		
+		bgfx::ProgramHandle shaderProg;
 		Skeleton* skeleton;
 		AnimationState* state;
 		float timeScale;
@@ -75,7 +77,8 @@ namespace spine
 		mutable bool usePremultipliedAlpha;
 	};
 
-	class BGFXTextureLoader : public TextureLoader {
+	class BGFXTextureLoader : public TextureLoader 
+	{
 	public:
 		virtual void load(AtlasPage& page, const String& path);
 		virtual void unload(void* texture);

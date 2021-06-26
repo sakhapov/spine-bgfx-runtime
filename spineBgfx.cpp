@@ -7,6 +7,7 @@ void spine::BGFXTextureLoader::load(AtlasPage& page, const String& path)
 	bgfx::TextureInfo ti;
 	spine::SkeletonDrawable::Texture txd;
 	txd.textureHndl = loadTexture(path.buffer(), BGFX_TEXTURE_NONE | BGFX_SAMPLER_NONE, 0, &ti, nullptr);
+	txd.s_texColor = bgfx::createUniform("s_texColor", bgfx::UniformType::Sampler); //hardcode just for representation of one sampler
 	txd.height = ti.height;
 	txd.width = ti.width;
 
@@ -73,7 +74,7 @@ void spine::SkeletonDrawable::draw() const
 
 	spine::SkeletonDrawable::Vertex vertex;
 	spine::SkeletonDrawable::Texture* texture = nullptr;
-	for (unsigned i = 0; i < skeleton->getSlots().size(); ++i) 
+	for (unsigned i = 0; i < skeleton->getSlots().size(); ++i)
 	{
 		Slot& slot = *skeleton->getDrawOrder()[i];
 		Attachment* attachment = slot.getAttachment();
@@ -110,7 +111,8 @@ void spine::SkeletonDrawable::draw() const
 			indicesCount = 6;
 			texture = (spine::SkeletonDrawable::Texture*)((AtlasRegion*)regionAttachment->getRendererObject())->page->getRendererObject();
 
-		} else if (attachment->getRTTI().isExactly(MeshAttachment::rtti)) {
+		}
+		else if (attachment->getRTTI().isExactly(MeshAttachment::rtti)) {
 			MeshAttachment* mesh = (MeshAttachment*)attachment;
 			attachmentColor = &mesh->getColor();
 
@@ -135,6 +137,10 @@ void spine::SkeletonDrawable::draw() const
 			continue;
 		}
 		else continue;
+
+		Vertex::init(); //setup vertex
+
+		bgfx::setTexture(0, texture->s_texColor, texture->textureHndl);
 
 		float r = static_cast<float>(skeleton->getColor().r * slot.getColor().r * attachmentColor->r * 255);
 		float g = static_cast<float>(skeleton->getColor().g * slot.getColor().g * attachmentColor->g * 255);
@@ -205,11 +211,15 @@ void spine::SkeletonDrawable::draw() const
 			}
 		}
 		clipper.clipEnd(slot);
+
+		auto vbh = bgfx::createVertexBuffer(bgfx::makeRef(vertices, sizeof(vertices)), Vertex::ms_layout);
+		auto ibh = bgfx::createIndexBuffer(bgfx::makeRef(indices, sizeof(indices)));
+
+		bgfx::setVertexBuffer(0, vbh);
+		bgfx::setIndexBuffer(ibh);
+
+		bgfx::submit(0, shaderProg);
 	}
-
-	//target.draw(*vertexArray, states);
-
-	clipper.clipEnd();
 
 	if (vertexEffect != 0) vertexEffect->end();
 }
