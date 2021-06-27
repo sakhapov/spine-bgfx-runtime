@@ -30,7 +30,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SpineBgfxPrototype.cpp">
+    <ClCompile Include="entry_prog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="sandbox.cpp">

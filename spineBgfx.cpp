@@ -2,6 +2,8 @@
 
 #define SPINE_MESH_VERTEX_COUNT_MAX 1000
 
+bgfx::VertexLayout spine::Vertex::ms_layout;
+
 void spine::BGFXTextureLoader::load(AtlasPage& page, const String& path)
 {
 	bgfx::TextureInfo ti;
@@ -64,6 +66,7 @@ void spine::SkeletonDrawable::update(float deltaTime)
 	skeleton->updateWorldTransform();
 }
 
+
 void spine::SkeletonDrawable::draw() const
 {
 	vertexArray->clear();
@@ -72,7 +75,6 @@ void spine::SkeletonDrawable::draw() const
 	if (skeleton->getColor().a == 0) return;
 	if (vertexEffect != NULL) vertexEffect->begin(*skeleton);
 
-	Vertex vertex;
 	spine::SkeletonDrawable::Texture* texture = nullptr;
 	for (unsigned i = 0; i < skeleton->getSlots().size(); ++i)
 	{
@@ -139,6 +141,8 @@ void spine::SkeletonDrawable::draw() const
 		else continue;
 
 		Vertex::init(); //setup vertex
+
+		Vertex vertex;
 
 		bgfx::setTexture(0, texture->s_texColor, texture->textureHndl);
 

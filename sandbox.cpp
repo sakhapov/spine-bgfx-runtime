@@ -61,11 +61,6 @@ void spineboy(spine::SkeletonData* skeletonData, spine::Atlas* atlas)
 
 			bounds.update(*skeleton, true);
 
-			/*
-			bgfx::touch(kClearView);
-			bgfx::dbgTextClear();
-			*/
-
 			drawable.update(0);
 			drawable.draw();
 			bgfx::frame();

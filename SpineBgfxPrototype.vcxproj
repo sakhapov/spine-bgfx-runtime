@@ -252,7 +252,7 @@
     <ClCompile Include="3rdParty\spine-cpp\src\spine\VertexEffect.cpp" />
     <ClCompile Include="sandbox.cpp" />
     <ClCompile Include="spineBgfx.cpp" />
-    <ClCompile Include="SpineBgfxPrototype.cpp" />
+    <ClCompile Include="entry_prog.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="3rdParty\bgfx\bgfx\bgfx.h" />
