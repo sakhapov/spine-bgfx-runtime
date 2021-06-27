@@ -27,7 +27,7 @@ spine::SpineExtension* spine::getDefaultExtension() {
 
 spine::SkeletonDrawable::SkeletonDrawable(SkeletonData* skeletonData, AnimationStateData* stateData)
 {
-	vertexArray = new std::vector<extension::VertexDecl>();
+	vertexArray = new std::vector<VertexDecl>();
 	Bone::setYDown(true);
 	worldVertices.ensureCapacity(SPINE_MESH_VERTEX_COUNT_MAX);
 	skeleton = new(__FILE__, __LINE__) Skeleton(skeletonData);
@@ -72,7 +72,7 @@ void spine::SkeletonDrawable::draw() const
 	if (skeleton->getColor().a == 0) return;
 	if (vertexEffect != NULL) vertexEffect->begin(*skeleton);
 
-	extension::VertexDecl vertex;
+	VertexDecl vertex;
 	spine::SkeletonDrawable::Texture* texture = nullptr;
 	for (unsigned i = 0; i < skeleton->getSlots().size(); ++i)
 	{
@@ -138,7 +138,7 @@ void spine::SkeletonDrawable::draw() const
 		}
 		else continue;
 
-		extension::VertexDecl::init(); //setup vertex
+		VertexDecl::init(); //setup vertex
 
 		bgfx::setTexture(0, texture->s_texColor, texture->textureHndl);
 
@@ -212,7 +212,7 @@ void spine::SkeletonDrawable::draw() const
 		}
 		clipper.clipEnd(slot);
 
-		auto vbh = bgfx::createVertexBuffer(bgfx::makeRef(vertices, sizeof(vertices)), extension::VertexDecl::ms_layout);
+		auto vbh = bgfx::createVertexBuffer(bgfx::makeRef(vertices, sizeof(vertices)), VertexDecl::ms_layout);
 		auto ibh = bgfx::createIndexBuffer(bgfx::makeRef(indices, sizeof(indices)));
 
 		bgfx::setVertexBuffer(0, vbh);
