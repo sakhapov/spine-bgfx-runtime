@@ -19,7 +19,7 @@ namespace spine
 {
 	class SkeletonDrawable
 	{
-		struct VertexDecl
+		struct Vertex
 		{
 			uint8_t x;
 			uint8_t y;
@@ -53,7 +53,7 @@ namespace spine
 		Skeleton* skeleton;
 		AnimationState* state;
 		float timeScale;
-		std::vector<VertexDecl>* vertexArray;
+		std::vector<Vertex>* vertexArray;
 		VertexEffect* vertexEffect;
 
 		SkeletonDrawable(SkeletonData* skeletonData, AnimationStateData* stateData = 0);
