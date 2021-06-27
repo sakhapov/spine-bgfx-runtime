@@ -66,15 +66,35 @@ void spine::SkeletonDrawable::update(float deltaTime)
 	skeleton->updateWorldTransform();
 }
 
-
 void spine::SkeletonDrawable::draw() const
 {
 	vertexArray->clear();
+
+	bgfx::touch(0);
+
+	Vertex::init();
+
+	const bx::Vec3 at = { 0.0f, 0.0f,  0.0f };
+	const bx::Vec3 eye = { 0.0f, 0.0f, -7.0f };
+
+	// Set view and projection matrix for view 0.
+	{
+		float view[16];
+		bx::mtxLookAt(view, eye, at);
+
+		float proj[16];
+		bx::mtxProj(proj, 60.0f, float(1024) / float(768), 0.1f, 100.0f, bgfx::getCaps()->homogeneousDepth);
+		bgfx::setViewTransform(0, view, proj);
+
+		// Set view 0 default viewport.
+		bgfx::setViewRect(0, 0, 0, uint16_t(1024), uint16_t(768));
+	}
 
 	// Early out if skeleton is invisible
 	if (skeleton->getColor().a == 0) return;
 	if (vertexEffect != NULL) vertexEffect->begin(*skeleton);
 
+	Vertex vertex;
 	spine::SkeletonDrawable::Texture* texture = nullptr;
 	for (unsigned i = 0; i < skeleton->getSlots().size(); ++i)
 	{
@@ -112,7 +132,6 @@ void spine::SkeletonDrawable::draw() const
 			indices = &quadIndices;
 			indicesCount = 6;
 			texture = (spine::SkeletonDrawable::Texture*)((AtlasRegion*)regionAttachment->getRendererObject())->page->getRendererObject();
-
 		}
 		else if (attachment->getRTTI().isExactly(MeshAttachment::rtti)) {
 			MeshAttachment* mesh = (MeshAttachment*)attachment;
@@ -131,7 +150,6 @@ void spine::SkeletonDrawable::draw() const
 			uvs = &mesh->getUVs();
 			indices = &mesh->getTriangles();
 			indicesCount = mesh->getTriangles().size();
-
 		}
 		else if (attachment->getRTTI().isExactly(ClippingAttachment::rtti)) {
 			ClippingAttachment* clip = (ClippingAttachment*)slot.getAttachment();
@@ -139,12 +157,6 @@ void spine::SkeletonDrawable::draw() const
 			continue;
 		}
 		else continue;
-
-		Vertex::init(); //setup vertex
-
-		Vertex vertex;
-
-		bgfx::setTexture(0, texture->s_texColor, texture->textureHndl);
 
 		float r = static_cast<float>(skeleton->getColor().r * slot.getColor().r * attachmentColor->r * 255);
 		float g = static_cast<float>(skeleton->getColor().g * slot.getColor().g * attachmentColor->g * 255);
@@ -185,6 +197,7 @@ void spine::SkeletonDrawable::draw() const
 				vertexEffect->transform(x, y, u, v, vertexColor, dark);
 				(*vertices)[index] = x;
 				(*vertices)[index + 1] = y;
+				(*vertices)[index + 2] = 0; //default with no Z
 				tempUvs.add(u);
 				tempUvs.add(v);
 				tempColors.add(vertexColor);
@@ -194,6 +207,7 @@ void spine::SkeletonDrawable::draw() const
 				int index = (*indices)[ii] << 1;
 				vertex.x = (*vertices)[index];
 				vertex.y = (*vertices)[index + 1];
+				vertex.z = 0;
 				vertex.u = (*uvs)[index] * texture->width;
 				vertex.v = (*uvs)[index + 1] * texture->height;
 				Color vertexColor = tempColors[index >> 1];
@@ -209,6 +223,7 @@ void spine::SkeletonDrawable::draw() const
 				int index = (*indices)[ii] << 1;
 				vertex.x = (*vertices)[index];
 				vertex.y = (*vertices)[index + 1];
+				vertex.z = 0;
 				vertex.u = (*uvs)[index] * texture->width;
 				vertex.v = (*uvs)[index + 1] * texture->height;
 				vertexArray->push_back(vertex);
@@ -216,11 +231,21 @@ void spine::SkeletonDrawable::draw() const
 		}
 		clipper.clipEnd(slot);
 
-		auto vbh = bgfx::createVertexBuffer(bgfx::makeRef(vertices, sizeof(vertices)), Vertex::ms_layout);
+		auto vbh = bgfx::createVertexBuffer(bgfx::makeRef(vertexArray->data(), sizeof(vertexArray)), Vertex::ms_layout);
 		auto ibh = bgfx::createIndexBuffer(bgfx::makeRef(indices, sizeof(indices)));
 
 		bgfx::setVertexBuffer(0, vbh);
 		bgfx::setIndexBuffer(ibh);
+		bgfx::setTexture(0, texture->s_texColor, texture->textureHndl);
+
+		// Set render states.
+		bgfx::setState(0
+			| BGFX_STATE_WRITE_RGB
+			| BGFX_STATE_WRITE_A
+			| BGFX_STATE_WRITE_Z
+			| BGFX_STATE_DEPTH_TEST_LESS
+			| BGFX_STATE_MSAA
+		);
 
 		bgfx::submit(0, shaderProg);
 	}
